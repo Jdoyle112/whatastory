@@ -11,12 +11,32 @@
 			font-size: 50px;
 			font-weight: 600;
 		}
+
+		.loader {
+		    border: 8px solid #f3f3f3; /* Light grey */
+		    border-top: 8px solid #3498db; /* Blue */
+		    border-radius: 50%;
+		    width: 50px;
+		    height: 50px;
+		    margin: 0 auto;
+		    display: none;
+		    animation: spin 1.3s linear infinite;
+		}
+
+		.loader.active {
+			display: block;
+		}
+
+		@keyframes spin {
+		    0% { transform: rotate(0deg); }
+		    100% { transform: rotate(360deg); }
+		}
 	</style>
 <div class="container">
 	<br>
 	<div class="row text-center">
 		<div class="col-sm-12">
-			<h1>What a Story machine!</h1>
+			<h1>What a Story Machine!</h1>
 		</div>
 	</div>
 	<br><br>
@@ -30,12 +50,17 @@
 			</div>
 		</div>
 	</div>
+	<br><br>
+	<div class="row text-center">
+		<div class="loader"></div>
+	</div>
 </div>
 
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#btnSubmit").click(function(){
+			$(".loader").addClass("active");
 			var name = $("#input_name").val();
 			gifshot.createGIF({
 			    gifWidth: 500,
@@ -43,20 +68,22 @@
 			    video: [
 			        'room.mp4'
 			    ],
-			    interval: 0.1,
-			    numFrames: 30,
+			    interval: 0,
+			    numFrames: 25,
 			    frameDuration: 1,
 			    text: "What a story " + name + "!",
 			    fontWeight: 'normal',
-			    fontSize: '22px',
+			    fontSize: '30px',
+			    minFontSize: '30px',
 			    fontFamily: 'sans-serif',
-			    fontColor: '#000',
+			    fontColor: '#fff',
 			    textAlign: 'center',
 			    textBaseline: 'bottom',
 			    sampleInterval: 10,
 			    numWorkers: 2
 			}, function (obj) {
 			    if (!obj.error) {
+			    	$(".loader").removeClass("active");
 			        var image = obj.image, animatedImage = document.createElement('img');
 			        animatedImage.src = image;
 			        document.body.appendChild(animatedImage);
