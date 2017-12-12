@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='gifshot.js'></script>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+
+<input type="text" placeholder="Enter name" id="input_name">
+<button id="btnSubmit" class="btn btn-default" text="Submit">Submit</button>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btnSubmit").click(function(){
+			var name = $("#input_name").val();
+			gifshot.createGIF({
+			    gifWidth: 200,
+			    gifHeight: 200,
+			    video: [
+			        'room.mp4'
+			    ],
+			    interval: 0.1,
+			    numFrames: 10,
+			    frameDuration: 1,
+			    text: "What a story " + name "!",
+			    fontWeight: 'normal',
+			    fontSize: '18px',
+			    fontFamily: 'sans-serif',
+			    fontColor: '#ffffff',
+			    textAlign: 'center',
+			    textBaseline: 'bottom',
+			    sampleInterval: 10,
+			    numWorkers: 2
+			}, function (obj) {
+			    if (!obj.error) {
+			        var image = obj.image, animatedImage = document.createElement('img');
+			        animatedImage.src = image;
+			        document.body.appendChild(animatedImage);
+			    }
+			});
+		});
+	});
+</script>
+</html>
