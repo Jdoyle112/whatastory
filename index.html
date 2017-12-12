@@ -6,11 +6,32 @@
 <script src='gifshot.js'></script>
 </head>
 <body>
+	<style type="text/css">
+		h1 {
+			font-size: 50px;
+			font-weight: 600;
+		}
+	</style>
+<div class="container">
+	<br>
+	<div class="row text-center">
+		<div class="col-sm-12">
+			<h1>What a Story machine!</h1>
+		</div>
+	</div>
+	<br><br>
+	<div class="row text-center">
+		<div class="col-sm-12">
+			<div class="input-group" style="max-width: 300px; margin: 0 auto;">
+			   <input type="text" class="form-control" placeholder="Enter name" id="input_name">
+			   <span class="input-group-btn">
+			        <button class="btn btn-default" id="btnSubmit" type="button">Go!</button>
+			   </span>
+			</div>
+		</div>
+	</div>
+</div>
 
-<h1>My First Heading</h1>
-
-<input type="text" placeholder="Enter name" id="input_name">
-<button id="btnSubmit" class="btn btn-default" text="Submit">Submit</button>
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -23,13 +44,13 @@
 			        'room.mp4'
 			    ],
 			    interval: 0.1,
-			    numFrames: 20,
+			    numFrames: 30,
 			    frameDuration: 1,
 			    text: "What a story " + name + "!",
 			    fontWeight: 'normal',
-			    fontSize: '18px',
+			    fontSize: '22px',
 			    fontFamily: 'sans-serif',
-			    fontColor: '#ffffff',
+			    fontColor: '#000',
 			    textAlign: 'center',
 			    textBaseline: 'bottom',
 			    sampleInterval: 10,
