@@ -54,6 +54,10 @@
 	<div class="row text-center">
 		<div class="loader"></div>
 	</div>
+	<div class="row">
+		<div class="col-md-8 text-center video-container">
+		</div>
+	</div>
 </div>
 
 </body>
@@ -63,18 +67,18 @@
 			$(".loader").addClass("active");
 			var name = $("#input_name").val();
 			gifshot.createGIF({
-			    gifWidth: 500,
-			    gifHeight: 500,
+			    gifWidth: 400,
+			    gifHeight: 400,
 			    video: [
 			        'room.mp4'
 			    ],
-			    interval: 0,
+			    interval: 0.01,
 			    numFrames: 25,
-			    frameDuration: 1,
+			    frameDuration: 1.5,
 			    text: "What a story " + name + "!",
 			    fontWeight: 'normal',
-			    fontSize: '30px',
-			    minFontSize: '30px',
+			    fontSize: '28px',
+			    minFontSize: '28px',
 			    fontFamily: 'sans-serif',
 			    fontColor: '#fff',
 			    textAlign: 'center',
@@ -86,7 +90,7 @@
 			    	$(".loader").removeClass("active");
 			        var image = obj.image, animatedImage = document.createElement('img');
 			        animatedImage.src = image;
-			        document.body.appendChild(animatedImage);
+			        $(".video-container").appendChild(animatedImage);
 			    }
 			});
 		});
