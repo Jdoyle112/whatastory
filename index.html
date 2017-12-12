@@ -31,6 +31,10 @@
 		    0% { transform: rotate(0deg); }
 		    100% { transform: rotate(360deg); }
 		}
+
+		.video-container {
+			margin-top: 60px;
+		}
 	</style>
 <div class="container">
 	<br>
@@ -55,7 +59,7 @@
 		<div class="loader"></div>
 	</div>
 	<div class="row">
-		<div class="col-md-8 text-center video-container">
+		<div class="col-md-8 col-md-offset-2 text-center video-container">
 		</div>
 	</div>
 </div>
@@ -72,9 +76,9 @@
 			    video: [
 			        'room.mp4'
 			    ],
-			    interval: 0.01,
+			    interval: 0.1,
 			    numFrames: 25,
-			    frameDuration: 1.5,
+			    frameDuration: 1,
 			    text: "What a story " + name + "!",
 			    fontWeight: 'normal',
 			    fontSize: '28px',
