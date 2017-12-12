@@ -17,13 +17,13 @@
 		$("#btnSubmit").click(function(){
 			var name = $("#input_name").val();
 			gifshot.createGIF({
-			    gifWidth: 200,
-			    gifHeight: 200,
+			    gifWidth: 500,
+			    gifHeight: 500,
 			    video: [
 			        'room.mp4'
 			    ],
 			    interval: 0.1,
-			    numFrames: 10,
+			    numFrames: 20,
 			    frameDuration: 1,
 			    text: "What a story " + name + "!",
 			    fontWeight: 'normal',
